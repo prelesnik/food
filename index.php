@@ -32,10 +32,35 @@ $f3->route('GET /lunch', function() {
     $view = new View();
     echo $view->render('views/lunch.html');
 });
+
 //define a breakfast/pancakes route
 $f3->route('GET /breakfast/pancakes', function() {
     $view = new View();
     echo $view->render('views/pancakes.html');
+});
+
+//define a dinner route
+$f3->route('GET /dinner', function() {
+    $view = new View();
+    echo $view->render('views/dinner.html');
+});
+
+//define a dinner/tacos route
+$f3->route('GET /dinner/tacos', function() {
+    $view = new View();
+    echo $view->render('views/tacos.html');
+});
+
+//define a dinner/pizza route
+$f3->route('GET /dinner/pizza', function() {
+    $view = new View();
+    echo $view->render('views/pizza.html');
+});
+
+//define a dinner/burgers route
+$f3->route('GET /dinner/burgers', function() {
+    $view = new View();
+    echo $view->render('views/burgers.html');
 });
 
 //run fat-free
