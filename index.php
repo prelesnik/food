@@ -142,6 +142,29 @@ $f3->route('POST /order-process', function($f3) {
     //echo $view->render('views/form1.html');
 });
 
+//define a route as described in class
+$f3->route('GET /dessert/@param', function($f3, $param) {
+    //echo "<h3>I like {$param['param']} for dessert</h3>";
+
+    if ($param['param'] == 'pie')
+    {
+        $view = new View();
+        echo $view->render('views/pie.html');
+    }
+
+    else if ($param['param'] == 'cake' || $param['param'] == 'cookies' || $param['param'] == 'brownies')
+    {
+        echo "<h3>I like {$param['param']} for dessert</h3>";
+    }
+
+    else
+    {
+        $f3->error(404);
+    }
+
+
+
+});
 
 
 //run fat-free
