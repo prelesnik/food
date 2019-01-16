@@ -63,5 +63,21 @@ $f3->route('GET /dinner/burgers', function() {
     echo $view->render('views/burgers.html');
 });
 
+//define a route with a parameter
+$f3->route('GET /@food', function($f3, $params) {
+    //print_r($params);
+    echo "<h3>I like " . $params['food'] . "</h3>";
+    //$view = new View();
+    //echo $view->render('views/burgers.html');
+});
+
+//define a route with multiple parameters
+$f3->route('GET /@meal/@food', function($f3, $params) {
+    //print_r($params);
+    echo "<h3>I like " . $params['food'] .  " for " . $params['meal'] . "</h3>";
+    //$view = new View();
+    //echo $view->render('views/burgers.html');
+});
+
 //run fat-free
 $f3->run();
