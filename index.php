@@ -27,6 +27,10 @@ $f3->route('GET /', function($f3) {
     $f3->set('username', 'mprelesnik');
     $f3->set('password', sha1('Password01'));
     $f3->set('title', 'Working with Templates');
+    $f3->set('temp', 67);
+    $f3->set('radius', 12);
+    $f3->set('fruits', array('apple', 'orange', 'banana'));
+    $f3->set('bookmarks', array('mlb'=>'www.mlb.com', 'reddit'=>'www.reddit.com', 'greenriver'=>'www.greenriver.edu'));
 
 //load a template
     $template = new Template();

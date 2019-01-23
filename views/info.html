@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Practice with Templates</title>
+    <title>{{@title}}</title>
 </head>
 <body>
-    <h1>Practice with Templates</h1>
+    <h1>{{@title}}</h1>
+    <p>User logged in as {{@username}} using {{@password}}</p>
+    <p>Farenheit: {{@temp}}</p>
+    <p>Celcius: {{round((@temp - 32) * (5.0/9.0), 2)}}</p>
+    <p>Circumference: {{2 * 3.14 * @radius}}</p>
+
+    <ol>
+        <repeat group="{{@fruits}}" value="{{@fruit}}">
+            <li>{{trim(@fruit)}}</li>
+        </repeat>
+    </ol>
+
+    <repeat group="{{@bookmarks}}" value="{{@text=>@url}}">
+        <a href="http://{{@url}}">{{@text}}</a><br>
+    </repeat>
+
 </body>
 </html>
