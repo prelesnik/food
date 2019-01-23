@@ -25,7 +25,7 @@ $f3->set('DEBUG', 3);
 $f3->route('GET /', function($f3) {
     //save variables
     $f3->set('username', 'mprelesnik');
-    $f3->set('password', "sha1('Password01')");
+    $f3->set('password', sha1('Password01'));
     $f3->set('title', 'Working with Templates');
 
 //load a template
