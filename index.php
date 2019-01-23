@@ -1,4 +1,11 @@
 <?php
+
+
+
+
+
+
+
 //Mike Prelesnik
 //1/11/19
 
@@ -14,13 +21,27 @@ $f3 = Base::instance();
 //turn on fat-free error reporting
 $f3->set('DEBUG', 3);
 
-//define a default route
+//define a default route (practicing with templates, NOT VIEWS)
+$f3->route('GET /', function($f3) {
+    //save variables
+    $f3->set('username', 'mprelesnik');
+    $f3->set('password', "sha1('Password01')");
+    $f3->set('title', 'Working with Templates');
+
+//load a template
+    $template = new Template();
+    echo $template->render('views/info.html');
+});
+
+
+/*
+ * //define a default route
 $f3->route('GET /', function() {
     //echo "<h1>My Fav Foods</h1>";
     $view = new View();
     echo $view->render('views/home.html');
 });
-
+ *
 //define a breakfast route
 $f3->route('GET /breakfast', function() {
     $view = new View();
@@ -165,7 +186,7 @@ $f3->route('GET /dessert/@param', function($f3, $param) {
 
 
 });
-
+*/
 
 //run fat-free
 $f3->run();
